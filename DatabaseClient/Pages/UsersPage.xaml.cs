@@ -31,7 +31,6 @@ namespace DatabaseClient.Pages
         {
             InitializeComponent();
             Loaded += OnLoaded;
-            
         }
 
         private async void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
@@ -66,12 +65,12 @@ namespace DatabaseClient.Pages
         {
             UserDataGrid.Columns[0].IsReadOnly = true;
         }
-
-        private void UserDataGrid_OnCellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        private async void UserDataGrid_OnRowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
             if (e.EditAction == DataGridEditAction.Commit)
             {
                 Debug.WriteLine("changed a value");
+                //await UpdateUsers();
             }
         }
 
@@ -81,6 +80,8 @@ namespace DatabaseClient.Pages
             Users = new ObservableCollection<User>(newUsers);
             OnPropertyChanged(nameof(Users));
         }
+
+
 #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 

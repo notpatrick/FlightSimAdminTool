@@ -25,6 +25,14 @@ namespace DatabaseClient
             }
         }
 
+        public static async Task UpdateUser(User user)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = await client.PutAsync(ServerUrl + "/user/"+user.Id, UserToContent(user));
+            }
+        }
+
         public static async Task DeleteUser(int id)
         {
             using (var client = new HttpClient())
