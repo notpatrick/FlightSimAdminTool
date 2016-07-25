@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DatabaseClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        WindowStartupLocation="CenterScreen"
+        Title="DatabaseClient" 
+        MinHeight="400" MinWidth="500"
+        Height="1080" Width="1920">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Users">
+                <Frame Source="../Pages/UsersPage.xaml"></Frame>
+            </TabItem>
+            <TabItem Header="GameStates">
+                <Frame Source="../Pages/GameStatesPage.xaml"></Frame>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
