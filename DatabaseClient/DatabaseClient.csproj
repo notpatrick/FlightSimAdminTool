@@ -62,6 +62,9 @@
     </ApplicationDefinition>
     <Compile Include="Classes\GameState.cs" />
     <Compile Include="Classes\WebConnection.cs" />
+    <Compile Include="Windows\CreateNewGameStateWindow.xaml.cs">
+      <DependentUpon>CreateNewGameStateWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\CreateNewUserWindow.xaml.cs">
       <DependentUpon>CreateNewUserWindow.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UsersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CreateNewGameStateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

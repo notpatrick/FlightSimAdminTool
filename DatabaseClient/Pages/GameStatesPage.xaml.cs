@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DatabaseClient.Annotations;
+using DatabaseClient.Windows;
 
 namespace DatabaseClient.Pages
 {
@@ -38,9 +39,11 @@ namespace DatabaseClient.Pages
             await UpdateGameStates();
         }
 
-        private void CreateGamestateButtonClick(object sender, RoutedEventArgs e)
+        private async void CreateGamestateButtonClick(object sender, RoutedEventArgs e)
         {
-                
+            var createNewGameStateWindows = new CreateNewGameStateWindow();
+            createNewGameStateWindows.ShowDialog();
+            await UpdateGameStates();
         }
 
         private async void DeleteGamestateButtonClick(object sender, RoutedEventArgs e)

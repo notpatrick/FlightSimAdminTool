@@ -22,8 +22,6 @@ namespace DatabaseClient
             using (var client = new HttpClient())
             {
                 var response = await client.PostAsync(ServerUrl + "/user", UserToContent(newUser));
-
-                //var responseString = await response.Content.ReadAsStringAsync();
             }
         }
 
@@ -40,7 +38,7 @@ namespace DatabaseClient
             List<User> result;
             using (var client = new HttpClient())
             {
-                var response = await client.GetAsync(ServerUrl + "/users");
+                var response = await client.GetAsync(ServerUrl + "/user");
                 response.EnsureSuccessStatusCode();
 
                 var x = await response.Content.ReadAsStringAsync();
@@ -71,9 +69,7 @@ namespace DatabaseClient
         {
             using (var client = new HttpClient())
             {
-                var response = await client.PostAsync(ServerUrl + "/save", GameStateToContent(state));
-
-                //var responseString = await response.Content.ReadAsStringAsync();
+                var response = await client.PostAsync(ServerUrl + "/state", GameStateToContent(state));
             }
         }
 
@@ -104,7 +100,6 @@ namespace DatabaseClient
         {
             var pairs = new Dictionary<string, string>
             {
-                {"id", state.Id.ToString()},
                 {"userID", state.UserId.ToString()},
                 {"score", state.Score.ToString()},
                 {"isRunning", state.IsRunning ? "1" : "0"},

@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="DatabaseClient" 
         MinHeight="400" MinWidth="500"
-        Height="1080" Width="1920">
+        Height="600" Width="800">
     <Grid>
         <TabControl>
             <TabItem Header="Users">

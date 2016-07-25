@@ -26,7 +26,7 @@ namespace DatabaseClient.Windows
 
         private async void CreateUserButtonClick(object sender, RoutedEventArgs e)
         {
-            var newUser = new User(-1, NameTextBox.Text, PasswordTextBox.Text);
+            var newUser = new User(-1, NameTextBox.Text, PasswordTextBox.Password);
             await WebConnection.CreateNewUser(newUser);
             this.Close();
         }
